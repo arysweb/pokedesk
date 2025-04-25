@@ -5,9 +5,9 @@
   }
   
   :root {
-    --bento-blue: #2980b9;
+    --bento-blue: #3742fa;
     --bento-pink: #e84393;
-    --bento-yellow: #fbc531;
+    --bento-yellow: #FDCE49;
     --bento-purple: #6c5ce7;
     --bento-cyan: #00cec9;
     --bento-green: #2ecc71;
@@ -62,7 +62,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
     height: 100vh;
     width: 100%;
     max-width: 1200px;
@@ -84,29 +84,113 @@
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     background-image:
-    linear-gradient(to top, rgba(45,52,54,0.3) 100%, rgba(45,52,54,0.1) 0%),
-    url(../img/card7.jpg);
-    background-position: center, bottom;
+    linear-gradient(to top, rgba(45,52,54,0.2) 100%, rgba(45,52,54,0.1) 0%),
+    url(../img/card11.jpg);
+    background-position: center, top;
     background-repeat: no-repeat, no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+  .card-a-top {
+    align-self: flex-start;
+  }
+  .card-a .bento-title {
+    font-size: 2.5rem;
+    font-family: var(--font-calsans);
+    text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+    line-height: 2.3rem;
+  }
+  .card-a .bento-desc {
+    font-size: 1.2rem;
+    font-family: var(--font-ubuntusans);
+    text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+    line-height: 1.4rem;
+  }
+  .card-a-logo {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  .logo-img {
+    width: 180px;
+    height: auto;
+    display: block;
   }
 
 .card-b {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  background: linear-gradient(45deg, var(--bento-pink) 0%, var(--bento-red) 50%, var(--bento-yellow) 100%);
+  background-image:
+    linear-gradient(to top, rgba(45,52,54,0.3) 100%, rgba(45,52,54,0.1) 0%),
+    url(../img/card18.jpg);
+  background-position: center, top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+}
+.card-b-top {
+  align-self: flex-start;
+}
+.card-b .bento-title {
+  font-size: 2rem;
+  font-family: var(--font-calsans);
+  text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+  line-height: 2rem;
+  text-align: left;
+}
+.card-b .bento-desc {
+  font-size: 1.1rem;
+  font-family: var(--font-ubuntusans);
+  text-shadow: 0 2px 8px #000, 0 1px 2px #000;
+  line-height: 1.3rem;
+  text-align: left;
+}
+.card-b .login-btn {
+  margin-top: 1.2rem;
+  padding: 0.55rem 0;
+  background: var(--bento-pink);
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-family: var(--font-calsans);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(55,66,250,0.08);
+  transition: background 0.15s, box-shadow 0.15s;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  display: block;
+}
+.card-b .login-btn:hover, .card-b .login-btn:focus {
+  background: var(--bento-black);
+  box-shadow: 0 4px 16px rgba(55,66,250,0.15);
 }
 .card-c {
   grid-column: 3 / 5;
   grid-row: 1 / 2;
-  background: linear-gradient(45deg, var(--bento-yellow) 0%, var(--bento-pink) 50%, var(--bento-red) 100%);
+  background-image:
+    linear-gradient(to top, rgba(45,52,54,0.2) 100%, rgba(45,52,54,0.1) 0%),
+    url(../img/card10.jpg);
+  background-position: center, bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover;
 }
 .card-d {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   background-image:
     linear-gradient(to top, rgba(45,52,54,0.3) 100%, rgba(45,52,54,0.1) 0%),
-    url(../img/header2.jpg);
+    url(../img/card9.jpg);
   background-position: center, top;
   background-repeat: no-repeat, no-repeat;
   background-size: cover;

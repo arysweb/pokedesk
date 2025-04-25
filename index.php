@@ -13,24 +13,30 @@
 <body>
     <div class="bento-grid">
         <div class="bento-card card-a">
-            <div class="bento-title title">Card A Title</div>
-            <div class="bento-desc">This is a reusable description for Card A.</div>
+            <div class="card-a-top">
+                <div class="bento-title title">Vende, Conoce, Colecciona</div>
+                <div class="bento-desc">Descubre, intercambia y conecta con pasionados de Pokémon.</div>
+            </div>
+            <div class="card-a-logo">
+                <img src="img/logo-color.png" alt="Logo de PokéDesk" class="logo-img">
+            </div>
         </div>
         <div class="bento-card card-b">
-            <div class="bento-title title">Card B Title</div>
-            <div class="bento-desc">This is a reusable description for Card B.</div>
+            <div class="bento-title title">Area Privada</div>
+            <div class="bento-desc">Accede o registra tu cuenta gratuita para acceder a todos los beneficios.</div>
+            <button class="login-btn">Acceder</button>
         </div>
         <div class="bento-card card-c">
-            <div class="bento-title title">Card C Title</div>
-            <div class="bento-desc">This is a reusable description for Card C.</div>
+            <div class="bento-title title">Título Tarjeta C</div>
+            <div class="bento-desc">Esta es una descripción reutilizable para la Tarjeta C.</div>
         </div>
         <div class="bento-card card-d">
-            <div class="bento-title title">Card D Title</div>
-            <div class="bento-desc">This is a reusable description for Card D.</div>
+            <div class="bento-title title">Título Tarjeta D</div>
+            <div class="bento-desc">Esta es una descripción reutilizable para la Tarjeta D.</div>
         </div>
         <div class="bento-card card-e">
-            <div class="bento-title title">Card E Title</div>
-            <div class="bento-desc">This is a reusable description for Card E.</div>
+            <div class="bento-title title">Título Tarjeta E</div>
+            <div class="bento-desc">Esta es una descripción reutilizable para la Tarjeta E.</div>
         </div>
         <div class="bento-card card-f">
             <div class="bento-title title">Card F Title</div>
