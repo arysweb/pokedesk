@@ -1,139 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bento Grid</title>
-  <link rel="stylesheet" href="css/style.css" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéDesk - Tu Red Social Pokémon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <!-- Preload background images to prevent initial black flash -->
+    <link rel="preload" href="img/bg-texture.jpg" as="image">
+    <link rel="preload" href="img/bg-texture-2.jpg" as="image">
+    <link rel="preload" href="img/bg-textures-3.jpg" as="image">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="bento-grid">
-        <div class="bento-card card-a">
-            <div class="card-a-top">
-                <div class="bento-title title">Vende, Conoce, Colecciona</div>
-                <div class="bento-desc">Descubre, intercambia y conecta con pasionados de Pokémon.</div>
-            </div>
-            <div class="card-a-logo">
-                <img src="img/logo-color.png" alt="Logo de PokéDesk" class="logo-img">
-            </div>
-        </div>
-        <a href="#" class="bento-card card-b">
-            <div class="bento-title title">Area Privada</div>
-            <div class="bento-desc">Accede o registra tu cuenta gratuita para acceder a todos los beneficios.</div>
-        </a>
-        <div class="bento-card card-c">
-            <div class="card-c-content">
-                <div class="bento-title title">¡Bienvenido a PokéDesk!</div>
-                <div class="bento-desc">Tu espacio para conectar con otros entrenadores, intercambiar cartas y vivir la aventura Pokémon. ¡Únete a nuestra comunidad y haz nuevos amigos que comparten tu pasión!</div>
-            </div>
-        </div>
-        <div class="bento-card card-d">
-            <a href="#mercado" class="overlay-link" aria-label="Ver más sobre el mercado"></a>
-            <div class="card-d-content">
-                <div class="bento-title title">Mercado</div>
-                <div class="bento-desc">Compra, vende e intercambia cartas y productos Pokémon con otros coleccionistas.</div>
-            </div>
-            <div class="category-buttons-container">
-                <a href="#sobres" class="category-button">
-                    <span>Sobres</span>
-                </a>
-                <a href="#cajas" class="category-button">
-                    <span>Cajas</span>
-                </a>
-                <a href="#coleccionables" class="category-button">
-                    <span>Coleccionables</span>
-                </a>
-                <a href="#accesorios" class="category-button">
-                    <span>Accesorios</span>
-                </a>
-                <a href="#cartas" class="category-button">
-                    <span>Cartas</span>
-                </a>
-                <a href="#figuras" class="category-button">
-                    <span>Figuras</span>
-                </a>
-                <a href="#peluches" class="category-button">
-                    <span>Peluches</span>
-                </a>
-                <a href="#ropa" class="category-button">
-                    <span>Ropa</span>
-                </a>
-                <a href="#juegos" class="category-button">
-                    <span>Juegos</span>
-                </a>
-                <a href="#eventos" class="category-button">
-                    <span>Eventos</span>
-                </a>
-            </div>
-        </div>
-        <div class="bento-card card-e">
-            <a href="#" class="card-link-button" aria-label="Ver más tiendas amigas">
-                Ver más
-            </a>
-            <div class="card-e-content">
-                <div class="bento-title title">Tiendas amigas</div>
-                <div class="bento-desc">Descubre las mejores tiendas de productos Pokémon en tu zona.</div>
-            </div>
-            <div class="shops-container">
-                <div class="sponsored-shop">
-                    <div class="shop-name">PokéMundo</div>
-                    <div class="shop-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span class="rating-count">(4.5)</span>
-                    </div>
-                    <a href="#" class="shop-button">Ver Perfil</a>
-                </div>
-            </div>
-        </div>
-        <div class="bento-card card-f">
-            <a href="#" class="card-link-button">
-                Ver más
-            </a>
-            <div class="card-f-content">
-                <div class="bento-title title">Eventos</div>
-                <div class="bento-desc">Descubre y participa en eventos organizados por la comunidad de pasionados de Pokémon en tu zona.</div>
-            </div>
-            <div class="card-f-row">
-                <div class="event-card">
-                    <div class="event-header">
-                        <div class="event-info">
-                            <div class="event-title">Torneo Pokémon Go</div>
-                            <div class="event-stats">
-                                <div class="stat"><i class="fas fa-calendar-day"></i> 02.05.2025</div>
-                                <div class="stat"><i class="fas fa-map-marker-alt"></i> Arganda Del Rey</div>
-                                <div class="stat"><i class="fas fa-users"></i> 100</div>
-                            </div>
-                        </div>
-                        <div class="event-action">
-                            <button class="event-button">Unirse</button>
-                        </div>
+    <!-- Background overlays for cross-fade effect -->
+    <div class="background-overlay bg-1" id="bg-1"></div>
+    <div class="background-overlay bg-2" id="bg-2"></div>
+    <div class="background-overlay bg-3" id="bg-3"></div>
+    
+    <div class="horizontal-scroll-container">
+        <!-- First Section -->
+        <section class="section" id="events-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>¿Buscas una comunidad para coleccionistas de cartas Pokémon en España?</h2>
+                    <p class="subtitle">PokéDesk es la primera y única plataforma española que integra red social, marketplace y catálogo para coleccionistas de cartas Pokémon.</p>
+                    <p class="description">Conecta con otros coleccionistas, compra y vende cartas verificadas, gestiona tu colección y participa en eventos exclusivos. Todo en un espacio diseñado por y para la comunidad española de cartas Pokémon.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Crear Perfil</button>
+                        <a href="test-squares.html" class="text-link">Explorar Perfiles <span class="arrow">→</span></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bento-card card-g">
-            <a href="#" class="small-card small-card-1">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="small-card small-card-2">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="small-card small-card-3">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="#" class="small-card small-card-4">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
+            <div class="column right-column">
+                <div class="social-grid">
+                    <!-- Row 1 -->
+                    <div class="grid-item color1" style="background-image: url('img/social/ali-mammadli-ngAuVVO1lQ4-unsplash.jpg');"></div>
+                    <div class="grid-item color2" style="background-image: url('img/social/ben-den-engelsen-7TU5JJAwPyU-unsplash.jpg');"></div>
+                    <div class="grid-item color3" style="background-image: url('img/social/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg');"></div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid-item color3" style="background-image: url('img/social/diego-hernandez-MSepzbKFz10-unsplash.jpg');"></div>
+                    <div class="grid-item color1" style="background-image: url('img/social/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg');"></div>
+                    <div class="grid-item color2" style="background-image: url('img/social/mario-la-pergola-iEpOxUNAjbo-unsplash.jpg');"></div>
+                    
+                    <!-- Row 3 -->
+                    <div class="grid-item color2" style="background-image: url('img/social/masi-mohammadi-Ij22fLzX3ak-unsplash.jpg');"></div>
+                    <div class="grid-item color3" style="background-image: url('img/social/midas-hofstra-a6PMA5JEmWE-unsplash.jpg');"></div>
+                    <div class="grid-item color1" style="background-image: url('img/social/mustafa-omar-RGtSTDmmcCk-unsplash.jpg');"></div>
+                    
+                    <!-- Row 4 -->
+                    <div class="grid-item color1" style="background-image: url('img/social/podmatch-GEnCnYhA1J4-unsplash.jpg');"></div>
+                    <div class="grid-item color2" style="background-image: url('img/social/sarah-brown-tTdC88_6a_I-unsplash.jpg');"></div>
+                    <div class="grid-item color3" style="background-image: url('img/social/vince-veras-AJIqZDAUD7A-unsplash.jpg');"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Second Section (same structure as first) -->
+        <section class="section" id="marketplace-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>Marketplace Verificado</h2>
+                    <p>El primer mercado digital español con autenticación de cartas Pokémon. Compra, vende e intercambia con total seguridad, usando nuestro sistema de valoración y verificación. Olvídate de las falsificaciones y disfruta del coleccionismo sin preocupaciones.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Descubrir el Mercado</button>
+                        <a href="#" class="text-link">Ver catálogo <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column image-column">
+                <div class="image-container">
+                    <img src="marketplace-placeholder.jpg" alt="Mercado Pokémon">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Third Section -->
+        <section class="section" id="pokedex-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>Gestor de Colección</h2>
+                    <p>Catálogo digital completo para gestionar tu colección de cartas Pokémon. Registra cada adquisición, establece objetivos de colección, monitoriza valores de mercado en tiempo real y genera informes personalizados sobre el valor y rareza de tu colección.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Gestionar Colección</button>
+                        <a href="#" class="text-link">Explorar herramientas <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column image-column">
+                <div class="image-container">
+                    <img src="pokedex-placeholder.jpg" alt="Pokédex App">
+                </div>
+            </div>
+        </section>
     </div>
+    
+    <script src="js/scripts.js"></script>
 </body>
 </html>

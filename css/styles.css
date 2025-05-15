@@ -1,0 +1,416 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu Sans', Arial, sans-serif;
+    background-image: url('../img/bg-texture.jpg'); /* Same as first section for instant loading */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/* Horizontal scrolling container */
+.horizontal-scroll-container {
+    white-space: nowrap; /* Keep content on a single line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-snap-type: x mandatory; /* Snap to sections */
+}
+
+/* Hide scrollbar */
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Section styles with specific backgrounds */
+.section {
+    display: inline-block; /* Display sections side by side */
+    width: 100vw;
+    height: 100vh;
+    vertical-align: top;
+    white-space: normal; /* Reset white-space for section content */
+    scroll-snap-align: start; /* Snap alignment */
+    position: relative;
+    overflow: hidden;
+    clear: both; /* Ensure sections don't wrap */
+}
+
+/* Global background overlay for cross-fade effect */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Individual background images */
+.bg-1 {
+    background-image: url('../img/bg-texture.jpg');
+    opacity: 1; /* First one starts visible */
+}
+
+.bg-2 {
+    background-image: url('../img/bg-texture-2.jpg');
+}
+
+.bg-3 {
+    background-image: url('../img/bg-textures-3.jpg');
+}
+
+/* Section background elements - now just for hover effects */
+.section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: background-color 0.8s ease-in-out;
+}
+
+/* Advanced fluid background transitions */
+.section .section-bg {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    transition: opacity 1s cubic-bezier(0.33, 1, 0.68, 1), 
+                transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                filter 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+    background-size: 110% auto;
+    background-position: center;
+}
+
+.section:not(.active):not(.partial-active) .section-bg {
+    opacity: 0;
+    transform: scale(1.08);
+    filter: blur(8px);
+}
+
+.section.partial-active .section-bg {
+    opacity: 0.4;
+    transform: scale(1.04);
+    filter: blur(3px);
+    background-size: 105% auto;
+}
+
+/* Column styles - consistent across all sections */
+.column {
+    display: block; /* Changed from inline-block to block since we're using float */
+    width: 50%; /* Each column takes exactly half the section width */
+    height: 100%;
+    position: relative;
+    float: left; /* Ensure columns stack horizontally */
+}
+
+.text-column {
+    padding: 5% 5% 5% 10%; /* Top, Right, Bottom, Left */
+    background-color: transparent;
+}
+
+.cacat-column {
+    padding: 5% 5% 5% 10%; /* Top, Right, Bottom, Left */
+    background-color: transparent;
+}
+
+/* Content alignment */
+.text-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Consistent styling for all sections */
+#marketplace-section .text-column,
+#events-section .text-column,
+#pokedex-section .text-column {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* All sections have identical styling */
+.section {
+    background: transparent;
+}
+
+/* Make all columns fully visible */
+.column {
+    opacity: 1;
+}
+
+/* Ensure consistent styling for all text columns */
+.text-column {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Fix for marketplace section */
+#marketplace-section .text-column {
+    background-color: transparent !important;
+    display: inline-block !important;
+    width: 50% !important; /* Restored to 50% */
+    height: 100% !important;
+    vertical-align: top !important;
+    padding: 5% 5% 5% 10% !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+/* Ensure marketplace text content is visible */
+#marketplace-section .text-content {
+    position: relative !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#marketplace-section h2,
+#marketplace-section p,
+#marketplace-section button {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure consistent styling for all image columns */
+.image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Social grid styles */
+.right-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
+    height: 90%;
+    gap: 0.6rem;
+}
+
+.grid-item {
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fallback pastel colors if images don't load */
+.grid-item.color1 {
+    background-color: #ffb6c1; /* Pastel pink */
+}
+
+.grid-item.color2 {
+    background-color: #add8e6; /* Pastel blue */
+}
+
+.grid-item.color3 {
+    background-color: #fffacd; /* Pastel yellow */
+}
+
+/* All grid items are square without rounded borders */
+.grid-item {
+    border-radius: 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Text styles - with custom fonts and optimized for professional content */
+h2 {
+    font-family: 'Cal Sans', sans-serif;
+    font-size: 2.5rem; /* Reduced from 3.2rem */
+    line-height: 1.1; /* Reduced line height */
+    margin-bottom: 1.5rem;
+    color: #000; /* Pokémon blue color instead of black */
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Ubuntu Sans', sans-serif;
+    font-size: 1.1rem; /* Base font size */
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: #fff; /* White for descriptions */
+    max-width: 90%;
+    white-space: normal;
+    text-align: left;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Shadow for better readability on backgrounds */
+}
+
+/* New subtitle style - larger than regular text but smaller than h2 */
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    max-width: 95%;
+}
+
+/* New description style - smaller than subtitle */
+.description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 90%;
+}
+
+.cta-button {
+    padding: 0.7rem 1.2rem; /* More top/bottom padding */
+    font-size: 0.8rem;
+    font-family: 'Ubuntu Sans', sans-serif;
+    font-weight: 600;
+    background-color: #333333; /* Dark gray color */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Reduced border radius */
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px; /* Minimum width for consistency */
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Button group styles */
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Text link styles */
+.text-link {
+    font-family: 'Ubuntu Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700; /* Bolder text */
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.text-link .arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    transition: transform 0.2s ease;
+}
+
+.text-link:hover {
+    color: #333333; /* Dark gray on hover (same as button color) */
+}
+
+.text-link:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* Profile Grid Styles - Table-based for maximum compatibility */
+.profile-grid {
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    table-layout: fixed;
+}
+
+.profile-item {
+    width: 33.33%;
+    height: 80px;
+    border-radius: 50% 10px 10px 10px; /* Half circle on top-left, rounded corners elsewhere */
+    border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Apply different border-radius to different cells */
+.profile-grid tr:nth-child(even) td {
+    border-radius: 10px 50% 10px 10px; /* Half circle on top-right */
+}
+
+.profile-grid tr:nth-child(odd) td:nth-child(2) {
+    border-radius: 10px 10px 50% 10px; /* Half circle on bottom-right */
+}
+
+.profile-grid tr:nth-child(even) td:nth-child(3) {
+    border-radius: 10px 10px 10px 50%; /* Half circle on bottom-left */
+}
+
+/* Color classes with gradients for more visual appeal */
+.color1 {
+    background: linear-gradient(135deg, #e30613 0%, #ff4d4d 100%); /* Pokémon red gradient */
+}
+
+.color2 {
+    background: linear-gradient(135deg, #3567b0 0%, #5d8aca 100%); /* Pokémon blue gradient */
+}
+
+.color3 {
+    background: linear-gradient(135deg, #ffcb05 0%, #ffe066 100%); /* Pokémon yellow gradient */
+}
+
+.color4 {
+    background: linear-gradient(135deg, #4dad5b 0%, #7fd48c 100%); /* Green gradient */
+}
+
+.color5 {
+    background: linear-gradient(135deg, #9966cc 0%, #bb99dd 100%); /* Purple gradient */
+}
+
+.color6 {
+    background: linear-gradient(135deg, #ff9966 0%, #ffbb99 100%); /* Orange gradient */
+}
+
+/* Image container styles (keeping for other sections) */
+.image-container {
+    width: 100%;
+    height: 80%; /* Slightly smaller to ensure it fits within the column */
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
