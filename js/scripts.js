@@ -1,4 +1,110 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Random image switching animation
+    function setupRandomSwitching() {
+        // Get all grid items
+        const allGridItems = document.querySelectorAll('.social-grid .grid-item');
+        const gridItems = Array.from(allGridItems);
+        
+        // Make sure we have items
+        if (gridItems.length === 0) return;
+        
+        // Store original content and classes for each item
+        const originalContent = gridItems.map(item => item.innerHTML);
+        const originalClasses = gridItems.map(item => {
+            return [...item.classList].filter(cls => cls !== 'grid-item').join(' ');
+        });
+        
+        // Function to switch two random items one at a time
+        function switchRandomItems() {
+            // Select two random items to switch
+            const availableIndices = gridItems.map((_, index) => index);
+            const index1 = Math.floor(Math.random() * availableIndices.length);
+            availableIndices.splice(index1, 1);
+            const index2 = Math.floor(Math.random() * availableIndices.length);
+            
+            const item1 = gridItems[index1];
+            const item2 = gridItems[availableIndices[index2]];
+            
+            // Save content and classes for both items
+            const item1Content = item1.innerHTML;
+            const item1Classes = [...item1.classList].filter(cls => cls !== 'grid-item').join(' ');
+            
+            const item2Content = item2.innerHTML;
+            const item2Classes = [...item2.classList].filter(cls => cls !== 'grid-item').join(' ');
+            
+            // First, animate item1 disappearing
+            item1.classList.add('fade-out');
+            
+            // After item1 fades out, change its content
+            setTimeout(() => {
+                // Change item1 to item2's content
+                item1.innerHTML = item2Content;
+                item1.className = 'grid-item';
+                if (item2Classes) {
+                    item2Classes.split(' ').forEach(cls => {
+                        if (cls) item1.classList.add(cls);
+                    });
+                }
+                
+                // Fade item1 back in with new content
+                item1.classList.add('fade-in');
+                
+                // Now start fading out item2
+                item2.classList.add('fade-out');
+                
+                // After item1 fades in and item2 fades out
+                setTimeout(() => {
+                    // Remove animation class from item1
+                    item1.classList.remove('fade-out', 'fade-in');
+                    
+                    // Change item2 to item1's original content
+                    item2.innerHTML = item1Content;
+                    item2.className = 'grid-item';
+                    if (item1Classes) {
+                        item1Classes.split(' ').forEach(cls => {
+                            if (cls) item2.classList.add(cls);
+                        });
+                    }
+                    
+                    // Fade item2 back in with new content
+                    item2.classList.add('fade-in');
+                    
+                    // Finally, remove all animation classes
+                    setTimeout(() => {
+                        item2.classList.remove('fade-out', 'fade-in');
+                    }, 500);
+                }, 600);
+            }, 500);
+        }
+        
+        // Switch items one after another in sequence
+        function startSequentialSwitching() {
+            let switchCount = 0;
+            
+            function doNextSwitch() {
+                if (switchCount >= 5) { // Do 5 switches then pause
+                    switchCount = 0;
+                    setTimeout(doNextSwitch, 3000); // Pause for 3 seconds
+                    return;
+                }
+                
+                switchRandomItems();
+                switchCount++;
+                setTimeout(doNextSwitch, 2000); // Wait for the full animation sequence to complete
+            }
+            
+            doNextSwitch();
+        }
+        
+        // Start the sequential switching
+        startSequentialSwitching();
+    }
+    
+    // Start the random switching animation after a delay
+    setTimeout(() => {
+        setupRandomSwitching();
+    }, 2000);
+    
     // Get the container and sections
     const container = document.querySelector('.horizontal-scroll-container');
     const sections = document.querySelectorAll('.section');

@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Preloader spinner -->
+    <div class="preloader" id="preloader">
+        <div class="spinner-container">
+            <img src="img/spinner.svg" alt="Cargando PokéDesk" class="spinner">
+        </div>
+    </div>
+    
     <!-- Background overlays for cross-fade effect -->
     <div class="background-overlay bg-1" id="bg-1"></div>
     <div class="background-overlay bg-2" id="bg-2"></div>
@@ -28,7 +35,7 @@
             <div class="column text-column">
                 <div class="text-content">
                     <h2>¿Buscas una comunidad para coleccionistas de cartas Pokémon en España?</h2>
-                    <p class="subtitle">PokéDesk es la primera y única plataforma española que integra red social, marketplace y catálogo para coleccionistas de cartas Pokémon.</p>
+                    <p class="subtitle">DomusCarta es la primera y única plataforma española que integra red social, marketplace y catálogo para coleccionistas de cartas Pokémon.</p>
                     <p class="description">Conecta con otros coleccionistas, compra y vende cartas verificadas, gestiona tu colección y participa en eventos exclusivos. Todo en un espacio diseñado por y para la comunidad española de cartas Pokémon.</p>
                     <div class="button-group">
                         <button class="cta-button">Crear Perfil</button>
@@ -39,24 +46,48 @@
             <div class="column right-column">
                 <div class="social-grid">
                     <!-- Row 1 -->
-                    <div class="grid-item color1" style="background-image: url('img/social/ali-mammadli-ngAuVVO1lQ4-unsplash.jpg');"></div>
-                    <div class="grid-item color2" style="background-image: url('img/social/ben-den-engelsen-7TU5JJAwPyU-unsplash.jpg');"></div>
-                    <div class="grid-item color3" style="background-image: url('img/social/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg');"></div>
+                    <div class="grid-item color1">
+                        <img src="img/social/ali-mammadli-ngAuVVO1lQ4-unsplash.jpg" alt="Social profile 1">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/ben-den-engelsen-7TU5JJAwPyU-unsplash.jpg" alt="Social profile 2">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg" alt="Social profile 3">
+                    </div>
                     
                     <!-- Row 2 -->
-                    <div class="grid-item color3" style="background-image: url('img/social/diego-hernandez-MSepzbKFz10-unsplash.jpg');"></div>
-                    <div class="grid-item color1" style="background-image: url('img/social/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg');"></div>
-                    <div class="grid-item color2" style="background-image: url('img/social/mario-la-pergola-iEpOxUNAjbo-unsplash.jpg');"></div>
+                    <div class="grid-item color3">
+                        <img src="img/social/diego-hernandez-MSepzbKFz10-unsplash.jpg" alt="Social profile 4">
+                    </div>
+                    <div class="grid-item color1">
+                        <img src="img/social/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg" alt="Social profile 5">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/mario-la-pergola-iEpOxUNAjbo-unsplash.jpg" alt="Social profile 6">
+                    </div>
                     
                     <!-- Row 3 -->
-                    <div class="grid-item color2" style="background-image: url('img/social/masi-mohammadi-Ij22fLzX3ak-unsplash.jpg');"></div>
-                    <div class="grid-item color3" style="background-image: url('img/social/midas-hofstra-a6PMA5JEmWE-unsplash.jpg');"></div>
-                    <div class="grid-item color1" style="background-image: url('img/social/mustafa-omar-RGtSTDmmcCk-unsplash.jpg');"></div>
+                    <div class="grid-item color2">
+                        <img src="img/social/masi-mohammadi-Ij22fLzX3ak-unsplash.jpg" alt="Social profile 7">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/midas-hofstra-a6PMA5JEmWE-unsplash.jpg" alt="Social profile 8">
+                    </div>
+                    <div class="grid-item color1">
+                        <img src="img/social/mustafa-omar-RGtSTDmmcCk-unsplash.jpg" alt="Social profile 9">
+                    </div>
                     
                     <!-- Row 4 -->
-                    <div class="grid-item color1" style="background-image: url('img/social/podmatch-GEnCnYhA1J4-unsplash.jpg');"></div>
-                    <div class="grid-item color2" style="background-image: url('img/social/sarah-brown-tTdC88_6a_I-unsplash.jpg');"></div>
-                    <div class="grid-item color3" style="background-image: url('img/social/vince-veras-AJIqZDAUD7A-unsplash.jpg');"></div>
+                    <div class="grid-item color1">
+                        <img src="img/social/podmatch-GEnCnYhA1J4-unsplash.jpg" alt="Social profile 10">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/sarah-brown-tTdC88_6a_I-unsplash.jpg" alt="Social profile 11">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/vince-veras-AJIqZDAUD7A-unsplash.jpg" alt="Social profile 12">
+                    </div>
                 </div>
             </div>
         </section>
@@ -102,6 +133,7 @@
         </section>
     </div>
     
+    <script src="js/preloader.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 </html>

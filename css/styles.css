@@ -205,24 +205,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .social-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    width: 100%;
-    height: 90%;
-    gap: 0.6rem;
+    grid-template-rows: repeat(4, 130px);
+    width: 85%;
+    gap: 10px; /* Increased from 6px to 10px for more space between items */
+    margin: 0 auto; /* Center the grid */
 }
 
+/* Simple rectangular grid items */
 .grid-item {
-    border-radius: 8px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+    height: 130px; /* Match grid row height */
     overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Fallback pastel colors if images don't load */
@@ -238,13 +243,265 @@ body {
     background-color: #fffacd; /* Pastel yellow */
 }
 
-/* All grid items are square without rounded borders */
-.grid-item {
-    border-radius: 0;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+/* Simple image styling */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Make the first image (ali-mammadli) a perfect circle */
+.grid-item:first-child {
+    border-radius: 50%;
     overflow: hidden;
+    width: 120px; /* Slightly smaller to prevent overlapping */
+    height: 120px; /* Slightly smaller to prevent overlapping */
+    justify-self: center; /* Center the circle in its grid cell */
+    aspect-ratio: 1/1; /* Ensure it's a perfect square */
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:first-child img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add rounded corners to the Diego Hernandez image (4th grid item) */
+.grid-item:nth-child(4) {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(4) img {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+}
+
+/* Make the Masi Mohammadi image (7th grid item) a perfect circle */
+.grid-item:nth-child(7) {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px; /* Slightly smaller to prevent overlapping */
+    height: 120px; /* Slightly smaller to prevent overlapping */
+    justify-self: center; /* Center the circle in its grid cell */
+    aspect-ratio: 1/1; /* Ensure it's a perfect square */
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:nth-child(7) img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add rounded corners to the Podmatch image (10th grid item) */
+.grid-item:nth-child(10) {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(10) img {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+}
+
+/* Style the second image in each row with alternating shapes */
+/* Second image in first row - slightly rounded corners */
+.grid-item:nth-child(2) {
+    border-radius: 8px; /* Reduced from 10px to 8px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(2) img {
+    border-radius: 8px; /* Reduced from 10px to 8px */
+}
+
+/* Second image in second row - circle */
+.grid-item:nth-child(5) {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px; /* Slightly smaller to prevent overlapping */
+    height: 120px; /* Slightly smaller to prevent overlapping */
+    justify-self: center;
+    aspect-ratio: 1/1;
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:nth-child(5) img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Second image in third row - slightly rounded corners */
+.grid-item:nth-child(8) {
+    border-radius: 8px; /* Reduced from 10px to 8px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(8) img {
+    border-radius: 8px; /* Reduced from 10px to 8px */
+}
+
+/* Second image in fourth row - circle */
+.grid-item:nth-child(11) {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px; /* Smaller to prevent overlapping */
+    height: 120px; /* Smaller to prevent overlapping */
+    justify-self: center;
+    aspect-ratio: 1/1;
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:nth-child(11) img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style the last image in each row with alternating shapes */
+/* Last image in first row - circle (matching first image in row) */
+.grid-item:nth-child(3) {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px; /* Smaller to prevent overlapping */
+    height: 120px; /* Smaller to prevent overlapping */
+    justify-self: center;
+    aspect-ratio: 1/1;
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:nth-child(3) img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Last image in second row - rectangle with rounded corners (matching first image in row) */
+.grid-item:nth-child(6) {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(6) img {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+}
+
+/* Last image in third row - circle (matching first image in row) */
+.grid-item:nth-child(9) {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 120px; /* Smaller to prevent overlapping */
+    height: 120px; /* Smaller to prevent overlapping */
+    justify-self: center;
+    aspect-ratio: 1/1;
+    margin: auto; /* Center in grid cell */
+}
+
+.grid-item:nth-child(9) img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Last image in fourth row - rectangle with rounded corners (matching first image in row) */
+.grid-item:nth-child(12) {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+    overflow: hidden;
+}
+
+.grid-item:nth-child(12) img {
+    border-radius: 15px; /* Reduced from 20px to 15px */
+}
+
+
+/* Adjust the horizontal-scroll-container to account for the topbar */
+.horizontal-scroll-container {
+    margin: 0 auto;
+}
+
+/* Preloader styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    animation: spin 4s linear infinite; /* Reduced speed by 50% (from 2s to 4s) */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Random switching animation */
+.social-grid {
+    position: relative;
+}
+
+/* Fade animations */
+.grid-item.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.grid-item.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Text styles - with custom fonts and optimized for professional content */
