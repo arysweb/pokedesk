@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéDesk - Tu Red Social Pokémon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <!-- Preload background images to prevent initial black flash -->
+    <link rel="preload" href="img/bg-texture-1.jpg" as="image">
+    <link rel="preload" href="img/bg-texture-2.jpg" as="image">
+    <link rel="preload" href="img/bg-texture-3.jpg" as="image">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader spinner -->
+    <div class="preloader" id="preloader">
+        <div class="spinner-container">
+            <img src="img/spinner.svg" alt="Cargando DomusCarta" class="spinner">
+        </div>
+    </div>
+    
+    <!-- Background overlays for cross-fade effect -->
+    <div class="background-overlay bg-1" id="bg-1"></div>
+    <div class="background-overlay bg-2" id="bg-2"></div>
+    <div class="background-overlay bg-3" id="bg-3"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Logo row at the top -->
+        <div class="row">
+            <div class="logo-row">
+                <a href="index.php">
+                    <img src="img/logo.svg" alt="DomusCarta Logo" class="logo">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Content row -->        
+        <div class="row">
+    
+    <div class="horizontal-scroll-container">
+        <!-- First Section -->
+        <section class="section" id="events-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>¿Buscas una comunidad para coleccionistas de cartas Pokémon en España?</h2>
+                    <p class="subtitle">DomusCarta es la primera y única plataforma española que integra red social, marketplace y catálogo para coleccionistas de cartas Pokémon.</p>
+                    <p class="description">Conecta con otros coleccionistas, compra y vende cartas verificadas, gestiona tu colección y participa en eventos exclusivos. Todo en un espacio diseñado por y para la comunidad española de cartas Pokémon.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Crear Perfil</button>
+                        <a href="test-squares.html" class="text-link">Explorar Perfiles <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column right-column">
+                <div class="social-grid">
+                    <!-- Row 1 -->
+                    <div class="grid-item color1">
+                        <img src="img/social/ali-mammadli-ngAuVVO1lQ4-unsplash.jpg" alt="Social profile 1">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/ben-den-engelsen-7TU5JJAwPyU-unsplash.jpg" alt="Social profile 2">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/ben-den-engelsen-YUu9UAcOKZ4-unsplash.jpg" alt="Social profile 3">
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="grid-item color3">
+                        <img src="img/social/diego-hernandez-MSepzbKFz10-unsplash.jpg" alt="Social profile 4">
+                    </div>
+                    <div class="grid-item color1">
+                        <img src="img/social/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg" alt="Social profile 5">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/mario-la-pergola-iEpOxUNAjbo-unsplash.jpg" alt="Social profile 6">
+                    </div>
+                    
+                    <!-- Row 3 -->
+                    <div class="grid-item color2">
+                        <img src="img/social/masi-mohammadi-Ij22fLzX3ak-unsplash.jpg" alt="Social profile 7">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/midas-hofstra-a6PMA5JEmWE-unsplash.jpg" alt="Social profile 8">
+                    </div>
+                    <div class="grid-item color1">
+                        <img src="img/social/mustafa-omar-RGtSTDmmcCk-unsplash.jpg" alt="Social profile 9">
+                    </div>
+                    
+                    <!-- Row 4 -->
+                    <div class="grid-item color1">
+                        <img src="img/social/podmatch-GEnCnYhA1J4-unsplash.jpg" alt="Social profile 10">
+                    </div>
+                    <div class="grid-item color2">
+                        <img src="img/social/sarah-brown-tTdC88_6a_I-unsplash.jpg" alt="Social profile 11">
+                    </div>
+                    <div class="grid-item color3">
+                        <img src="img/social/vince-veras-AJIqZDAUD7A-unsplash.jpg" alt="Social profile 12">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Second Section (same structure as first) -->
+        <section class="section" id="marketplace-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>Marketplace Verificado</h2>
+                    <p>El primer mercado digital español con autenticación de cartas Pokémon. Compra, vende e intercambia con total seguridad, usando nuestro sistema de valoración y verificación. Olvídate de las falsificaciones y disfruta del coleccionismo sin preocupaciones.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Descubrir el Mercado</button>
+                        <a href="#" class="text-link">Ver catálogo <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column image-column">
+                <div class="image-container">
+                    <img src="marketplace-placeholder.jpg" alt="Mercado Pokémon">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Third Section -->
+        <section class="section" id="pokedex-section">
+            <div class="section-bg"></div>
+            <div class="column text-column">
+                <div class="text-content">
+                    <h2>Gestor de Colección</h2>
+                    <p>Catálogo digital completo para gestionar tu colección de cartas Pokémon. Registra cada adquisición, establece objetivos de colección, monitoriza valores de mercado en tiempo real y genera informes personalizados sobre el valor y rareza de tu colección.</p>
+                    <div class="button-group">
+                        <button class="cta-button">Gestionar Colección</button>
+                        <a href="#" class="text-link">Explorar herramientas <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="column image-column">
+                <div class="image-container">
+                    <img src="pokedex-placeholder.jpg" alt="Pokédex App">
+                </div>
+            </div>
+        </section>
+    </div>
+        </div> <!-- End of content row -->
+    </div> <!-- End of container -->
+    
+    <script src="js/preloader.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

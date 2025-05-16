@@ -5,9 +5,35 @@
     box-sizing: border-box;
 }
 
+/* Container and row styles */
+.container {
+    width: 90%;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.row {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+/* Logo row styles */
+.logo-row {
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
 body {
     font-family: 'Ubuntu Sans', Arial, sans-serif;
-    background-image: url('../img/bg-texture.jpg'); /* Same as first section for instant loading */
+    background-image: url('../img/bg-texture-1.jpg'); /* Same as first section for instant loading */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,10 +45,11 @@ body {
     white-space: nowrap; /* Keep content on a single line */
     overflow-x: auto; /* Enable horizontal scrolling */
     overflow-y: hidden; /* Disable vertical scrolling */
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 90vh; /* Reduced to accommodate logo row */
     scroll-behavior: smooth; /* Smooth scrolling */
     scroll-snap-type: x mandatory; /* Snap to sections */
+    margin-top: 20px; /* Add space after logo row */
 }
 
 /* Hide scrollbar */
@@ -38,8 +65,8 @@ body {
 /* Section styles with specific backgrounds */
 .section {
     display: inline-block; /* Display sections side by side */
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 90vh; /* Reduced to accommodate logo row */
     vertical-align: top;
     white-space: normal; /* Reset white-space for section content */
     scroll-snap-align: start; /* Snap alignment */
@@ -65,7 +92,7 @@ body {
 
 /* Individual background images */
 .bg-1 {
-    background-image: url('../img/bg-texture.jpg');
+    background-image: url('../img/bg-texture-1.jpg');
     opacity: 1; /* First one starts visible */
 }
 
@@ -74,7 +101,7 @@ body {
 }
 
 .bg-3 {
-    background-image: url('../img/bg-textures-3.jpg');
+    background-image: url('../img/bg-texture-3.jpg');
 }
 
 /* Section background elements - now just for hover effects */
@@ -123,12 +150,12 @@ body {
 }
 
 .text-column {
-    padding: 5% 5% 5% 10%; /* Top, Right, Bottom, Left */
+    padding: 5% 5% 5% 0; /* Top, Right, Bottom, Left - removed left padding */
     background-color: transparent;
 }
 
 .cacat-column {
-    padding: 5% 5% 5% 10%; /* Top, Right, Bottom, Left */
+    padding: 5% 5% 5% 0; /* Top, Right, Bottom, Left - aligned with logo */
     background-color: transparent;
 }
 
@@ -170,7 +197,7 @@ body {
     width: 50% !important; /* Restored to 50% */
     height: 100% !important;
     vertical-align: top !important;
-    padding: 5% 5% 5% 10% !important;
+    padding: 5% 5% 5% 0 !important; /* Aligned with logo */
     position: relative !important;
     z-index: 100 !important;
 }
